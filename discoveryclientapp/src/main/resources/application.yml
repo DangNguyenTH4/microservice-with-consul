@@ -1,0 +1,17 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: discoveryClient
+  cloud:
+    consul:
+      config:
+        enabled: false
+      discovery:
+        instanceId: ${spring.application.name}:'dangnt':${random.value}
+
+
+#      host: localhost
+#      port: 8500
+#      discovery:
+#        instanceId: ${spring.application.name}:${random.value}
