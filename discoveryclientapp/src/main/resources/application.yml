@@ -5,8 +5,8 @@ spring:
     name: discoveryClient
   cloud:
     consul:
-      config:
-        enabled: false
+#      config:
+#        enabled: false
       discovery:
         instanceId: ${spring.application.name}:'dangnt':${random.value}
 
