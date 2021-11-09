@@ -3,7 +3,6 @@
 	<groupId>com.learntony.microservice</groupId>
 	<artifactId>module</artifactId>
 	<version>1.0</version>
-  <packaging>pom</packaging>
   	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -11,9 +10,10 @@
 
 	<modules>
 		<module>order-service</module>
-		<!-- <module>account-service</module> -->
-		<!-- <module>customer-service</module> -->
-		<!-- <module>product-service</module> -->
+		 <module>account-service</module>
+		 <module>customer-service</module>
+		 <module>product-service</module>
 		<module>gateway-service</module>
 	</modules>
+
 </project>

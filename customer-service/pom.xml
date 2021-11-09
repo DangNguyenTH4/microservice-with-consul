@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.learntony.microservice</groupId>
-	<artifactId>orderService</artifactId>
+	<artifactId>customerService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>orderService</name>
-	<description>Order service with consul</description>
+	<name>customerService</name>
+	<description>Customer service with consul</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.4</spring-cloud.version>
@@ -26,6 +26,11 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
 
 		<dependency>
