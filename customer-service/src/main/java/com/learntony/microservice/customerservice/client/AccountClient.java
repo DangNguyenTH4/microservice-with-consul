@@ -10,6 +10,6 @@ import java.util.List;
 public interface AccountClient {
 
 	@GetMapping("/customer/{customerId}")
-	List<Object> findByCustomer(@PathVariable("customerId") Long customerId);
+	List<Object> findByCustomer(@PathVariable("customerId") String customerId);
 	
 }

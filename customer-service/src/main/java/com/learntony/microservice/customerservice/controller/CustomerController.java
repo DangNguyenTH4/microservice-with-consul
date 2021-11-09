@@ -35,12 +35,12 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public Object findById(@PathVariable("id") Long id) {
+    public Object findById(@PathVariable("id") String id) {
         return service.findById(id);
     }
 
     @GetMapping("/withAccounts/{id}")
-    public Object findByIdWithAccounts(@PathVariable("id") Long id) throws JsonProcessingException {
+    public Object findByIdWithAccounts(@PathVariable("id") String id) throws JsonProcessingException {
         List<Object> accounts = accountClient.findByCustomer(id);
         log.info("Accounts found: {}", mapper.writeValueAsString(accounts));
         return service.findById(id);
@@ -49,12 +49,12 @@ public class CustomerController {
     }
 
     @PostMapping("/ids")
-    public List<Object> find(@RequestBody List<Long> ids) {
+    public List<Object> find(@RequestBody List<String> ids) {
         return service.find(ids);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable("id") Long id) {
+    public void delete(@PathVariable("id") String id) {
         service.delete(id);
     }
 }

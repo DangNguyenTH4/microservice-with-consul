@@ -13,9 +13,9 @@ public interface CustomerService {
 
     UpdateCustomerResponseDto update(UpdateCustomerRequestDto customer) ;
 
-    Object findById(Long id) ;
+    Object findById(String id) ;
 
-    void delete(Long id) ;
+    void delete(String id) ;
 
-    List<Object> find(List<Long> ids) ;
+    List<Object> find(List<String> ids) ;
 }
