@@ -1,3 +1,1 @@
-/home/dang/java/orderService/src/main/java/com/learntony/microservice/orderservice/OrderServiceApplication.java
-/home/dang/java/orderService/src/main/java/com/learntony/microservice/orderservice/controller/ConfigController.java
-/home/dang/java/orderService/src/main/java/com/learntony/microservice/orderservice/config/MySQLProperties.java
+/home/dang/java/consul-microservice/gateway-service/src/main/java/com/learntony/microservice/gatewayservice/GatewayServiceApplication.java

@@ -1,8 +1,8 @@
-env: prod
+env: dev
 
 spring:
   application:
-    name: order-service # apply name
+    name: gateway-service # apply name
   profiles:
     active: ${env} # Specify the environment and load the default environment by default
   cloud:
@@ -16,9 +16,9 @@ spring:
         # Enable configuration center, default value is true
         enabled: true
         # Set the basic folder of the configuration. The default value of config can be understood as the outermost folder of the configuration file
-        prefix: config/orderService
+        prefix: config/gatewayService
         # Set the folder name of the application. The default value of application is generally recommended to be set as the microservice application name
-        default-context: orderService
+        default-context: gatewayService
         # Configure environment separator, match default "," with default context configuration item
         # For example, the application orderService has environment default, dev, test and prod respectively
         # Just create the orderService, orderService dev, orderService test and orderService prod folders under the config folder
@@ -26,7 +26,7 @@ spring:
         # Specify the configuration format as yaml
         format: YAML
         # The Key in Key/Values of Consul corresponds to the entire configuration file
-        data-key: orderServiceConfig
+        data-key: gatewayServiceConfig
         # The above configuration can be understood as: load the configuration information corresponding to the Value whose Key is orderServiceConfig under the config/orderService / folder
         watch:
           # Whether to enable automatic refresh? The default value is true
