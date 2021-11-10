@@ -1,8 +1,3 @@
 .idea/
 consul-microservice.iml
 consul-data/
-account-service/target/
-customer-service/target/
-order-service/target/
-gateway-service/target/
-product-service/target/
