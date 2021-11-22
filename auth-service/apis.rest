@@ -1,0 +1,12 @@
+{{$port}} = 36155;
+###
+POST http://localhost:46473
+Content-Type: application/json
+
+{
+    "name": "P1",
+    "price": 20.45
+}
+
+###
+Get http://localhost:46473/ff8081817d062608017d06267acf0000

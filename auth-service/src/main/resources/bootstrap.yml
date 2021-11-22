@@ -1,0 +1,47 @@
+env: dev
+
+spring:
+  application:
+    name: auth-service # apply name
+  profiles:
+    active: ${env} # Specify the environment and load the default environment by default
+  cloud:
+    consul:
+      # Consul server address
+      host: localhost
+      port: 8500
+      # Configuration center related configuration
+      config:
+        failFast: true
+        # Enable configuration center, default value is true
+        enabled: true
+        # Set the basic folder of the configuration. The default value of config can be understood as the outermost folder of the configuration file
+        prefix: config/authService
+        # Set the folder name of the application. The default value of application is generally recommended to be set as the microservice application name
+        default-context: authService
+        # Configure environment separator, match default "," with default context configuration item
+        # For example, the application orderService has environment default, dev, test and prod respectively
+        # Just create the orderService, orderService dev, orderService test and orderService prod folders under the config folder
+        profile-separator: '-'
+        # Specify the configuration format as yaml
+        format: YAML
+        # The Key in Key/Values of Consul corresponds to the entire configuration file
+        data-key: authServiceConfig
+        # The above configuration can be understood as: load the configuration information corresponding to the Value whose Key is orderServiceConfig under the config/orderService / folder
+        watch:
+          # Whether to enable automatic refresh? The default value is true
+          enabled: true
+          # Refresh rate in milliseconds, default 1000
+          delay: 1000
+      # Service discovery related configuration
+      discovery:
+        register: true                                # Need to register
+        instance-id: ${spring.application.name}-${random.value}    # Registration instance id (must be unique)
+        service-name: ${spring.application.name}      # Service name
+#        port: ${server.port}                          # Service port
+        prefer-ip-address: true                       # Use ip address to register
+        ip-address: ${spring.cloud.client.ip-address} # Service request ip
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 4s
+server:
+  port: 0 #${service-port:9090} # port
